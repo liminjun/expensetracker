@@ -1,0 +1,14 @@
+<form class="form-inline">
+    <input type="text" placeholder="Date" ng-model="$ctrl.date" class="form-control">
+    <input type="text" placeholder="Payee" ng-model="$ctrl.payee" class="form-control">
+    <input type="text" placeholder="Description" ng-model="$ctrl.desc" class="form-control">
+
+    <select name="selectedCategory" id="selectedCategory" ng-model="$ctrl.selectedCategory" class="form-control" ng-options="category.name for category in $ctrl.categories track by category.$id">
+    </select>
+
+    <input type="text" placeholder="Amount" ng-model="$ctrl.amount" class="form-control">
+
+    <button ng-show="!$ctrl.editing" class="btn btn-primary btn-sm" ng-click="$ctrl.create()">Create</button>
+    <button ng-show="$ctrl.editing" class="btn btn-primary btn-sm" ng-click="$ctrl.save()">Save</button>
+    <button ng-show="$ctrl.editing" class="btn btn-warning btn-sm" ng-click="$ctrl.cancel()">Cancel</button>
+</form>

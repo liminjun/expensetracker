@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+    <!-- <script type="text/javascript" src="libs/firebase/firebase.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCB9jn9gwOaxY1rzlaD8_M32NcgK3I42Z0",
+            authDomain: "expensetracker-815af.firebaseapp.com",
+            databaseURL: "https://expensetracker-815af.firebaseio.com",
+            storageBucket: "expensetracker-815af.appspot.com",
+            messagingSenderId: "407595966937"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="libs/angularfire-2.3.0/angularfire.min.js"></script>
+
+    <script src="/app.js"></script>
+
+    <script src="/home/home.js"></script>
+    <script src="/nav/nav.js"></script>
+    <script src="/firebaseUrl.js"></script>
+    <script src="/login/auth.js"></script>
+    <script src="/login/login.js"></script>
+
+
+    <script src="/logout/logout.js"></script>
+    <script src="/firebaseRef.js"></script>
+
+    <script src="/userPreferences/editUserPref.js"></script>
+    <script src="/categories/categories.js"></script>
+    <script src="/expenses/expenseListDisplay.js"></script>
+    <script src="/expenses/expenseList.js"></script>
+    <script src="/expenses/editExpense.js"></script>
+</body>
+
+</html>

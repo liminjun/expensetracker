@@ -1,0 +1,21 @@
+{
+  "name": "building-apps-angular-firebase-angularfire",
+  "version": "1.0.0",
+  "description": "An expense trakcer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmssfe/building-apps-angular-firebase-angularfire.git"
+  },
+  "keywords": [],
+  "author": "lee li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmssfe/building-apps-angular-firebase-angularfire/issues"
+  },
+  "homepage": "https://github.com/cmssfe/building-apps-angular-firebase-angularfire#readme"
+}

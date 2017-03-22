@@ -1,0 +1,52 @@
+.hover-delete{
+    color: red;
+    transform: scale(1.3,1.3);
+}
+body{
+    padding-top: 80px;
+}
+.pointable{
+    cursor: pointer;
+}
+.navbar-nav{
+    padding: 15px;
+}
+.navbar-nav li a{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.navbar-default .navbar-brand,.navbar-inverse .navbar-brand{
+    font-size: 32px;
+    color: #468af0;
+    line-height: 50px;
+}
+.nav>li{
+    font-size: 16px;
+    line-height: 32px;
+}
+.icon-googleplus{
+    background:#e0492f url("assets/images/social-login.png") 0 -66px no-repeat;    
+}
+.icon-twitter{
+    background:#5EA9DD url("assets/images/social-login.png") 0 0 no-repeat;    
+}
+.icon-facebook{
+    background:#395697 url("assets/images/social-login.png") 0 -33px no-repeat;    
+}
+.icon-github{
+    background:#444 url("assets/images/github-login.png") 0 0 no-repeat;
+    background-repeat: no-repeat;
+}
+.btn-login{
+    color: #fff;
+    padding-left: 35px;
+}
+.btn.btn-login:hover,.btn.btn-login:focus{
+    color: #fff;
+}
+@media screen and (max-width:640px){
+    .navbar-brand{
+        width: 200px;
+    }
+}
