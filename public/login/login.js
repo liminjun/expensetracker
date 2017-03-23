@@ -15,7 +15,7 @@ angular.module('app').controller('LoginController', ['$location', 'auth', 'curre
     ctrl.googlePlusLogin = function () {
         auth.$signInWithPopup('google')
             .then(function () {
-                $location.path('/home');
+                $location.path('/categories');
             })
             .catch(function (error) {
                 ctrl.errorMessage = error.code;
@@ -45,7 +45,7 @@ angular.module('app').controller('LoginController', ['$location', 'auth', 'curre
     ctrl.githubLogin = function () {
         auth.$signInWithPopup('github')
             .then(function () {
-                $location.path('/categories');
+                $location.path('/home');
             })
             .catch(function (error) {
                 ctrl.errorMessage = error.code;

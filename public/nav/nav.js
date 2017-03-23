@@ -1,13 +1,18 @@
 angular.module('app').component('nav', {
     templateUrl: '/nav/nav.html',
-    controller: function ($firebaseObject, fbRef) {
-        var ctrl=this;
+    controller: function ($firebaseObject,auth) {
+        var ctrl = this;
 
-        ctrl.loaded=false;
+        ctrl.loaded = false;
 
-        ctrl.userPreferences = $firebaseObject(fbRef.getPreferencesRef());
+        var rootRef = firebase.database().ref();
+
+
+
+        ctrl.userPreferences = $firebaseObject(rootRef.child('preferences').child(auth.$getAuth().uid));
+
         ctrl.userPreferences.$loaded().then(function (data) {
-            ctrl.loaded=true;
+            ctrl.loaded = true;
             ctrl.darkTheme = ctrl.userPreferences.theme === 'dark';
         });
 

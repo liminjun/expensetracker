@@ -59,7 +59,7 @@ app.config(function ($routeProvider) {
         .when('/login', {
             templateUrl: 'login/login.html',
             controller: "LoginController",
-            controllerAs: "$ctrl",
+            controllerAs: "ctrl",
             resolve: {
                 currentAuth: ['auth', function (auth) {
                     return auth.$waitForSignIn();

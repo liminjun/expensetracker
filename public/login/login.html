@@ -1,24 +1,24 @@
-<h1 ng-hide="$ctrl.loggedIn" class="text-center">Please Login</h1>
+<h1 ng-hide="ctrl.loggedIn" class="text-center">Please Login</h1>
 
-<h1 ng-show="$ctrl.loggedIn">You have already logged in</h1>
+<h1 ng-show="ctrl.loggedIn">You have already logged in</h1>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-xs-6">
-            <button ng-hide="$ctrl.loggedIn" class="btn btn-login  icon-googleplus" ng-click="$ctrl.googlePlusLogin();">Google</button>
+            <button ng-hide="ctrl.loggedIn" class="btn btn-login  icon-googleplus" ng-click="ctrl.googlePlusLogin();">Google</button>
         </div>
         <div class="col-sm-3 col-xs-6">
-            <button ng-hide="$ctrl.loggedIn" class="btn btn-login icon-twitter" ng-click="$ctrl.twitterLogin();">Twitter</button>
+            <button ng-hide="ctrl.loggedIn" class="btn btn-login icon-twitter" ng-click="ctrl.twitterLogin();">Twitter</button>
         </div>
         <div class="col-sm-3 col-xs-6">
-            <button ng-hide="$ctrl.loggedIn" class="btn btn-login  icon-facebook" ng-click="$ctrl.fbLogin();">Facebook</button>
+            <button ng-hide="ctrl.loggedIn" class="btn btn-login  icon-facebook" ng-click="ctrl.fbLogin();">Facebook</button>
         </div>
         <div class="col-sm-3 col-xs-6">
-            <button ng-hide="$ctrl.loggedIn" class="btn btn-login  icon-github" ng-click="$ctrl.githubLogin();">Github</button>
+            <button ng-hide="ctrl.loggedIn" class="btn btn-login  icon-github" ng-click="ctrl.githubLogin();">Github</button>
         </div>
     </div>
 </div>
 
 <br>
 <br>
-<div class="alert alert-danger" ng-show="!!$ctrl.errorMessage">{{$ctrl.errorMessage}}</div>
+<div class="alert alert-danger" ng-show="!!ctrl.errorMessage">{{ctrl.errorMessage}}</div>
