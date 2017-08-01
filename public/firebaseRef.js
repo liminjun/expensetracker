@@ -2,6 +2,7 @@ angular.module('app').factory('fbRef',function(auth){
     return {
         getPreferencesRef:function(){
             var rootRef=firebase.database().ref();
+            debugger;
             return rootRef.child('preferences').child(auth.$getAuth().uid);
         },
         getCategoriesRef:function(){

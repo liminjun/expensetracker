@@ -1,0 +1,17 @@
+<nav></nav>
+<h1>用户信息</h1>
+<form class="form-inline">
+    <label for="displayName">Display Name:</label>
+    <input ng-model="ctrl.userPreferences.displayName" type="text" id="displayName" placeholder="Display Name" class="form-control">
+    <br>
+    <br>
+    <label for="themeColor">Theme Color:</label>
+    <select name="themeColor" id="themeColor" ng-model="ctrl.userPreferences.theme"
+    ng-options="theme for theme in ctrl.themes">
+
+    </select>
+    <br>
+    <br>
+    <button class="btn btn-primary btn-sm" ng-click="ctrl.save()">Save</button>
+    <button class="btn btn-default btn-sm" ng-click="ctrl.cancel()">Cancel</button>
+</form>

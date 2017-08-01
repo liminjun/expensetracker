@@ -1,26 +1,23 @@
-angular.module('app').component('editUserPref', {
-    templateUrl: '/userPreferences/editUserPref.html',
-    bindings: {
-        userPrefData: '=userPreferences'
-    },
-    controller: function (fbRef, $scope, $location) {
+angular.module('app').
+    controller('EditUserPrefController', ['fbRef', '$scope', '$location', 'userPreferences', function (fbRef, $scope, $location, userPreferences) {
+        
         var ctrl = this;
         ctrl.themes = [
             "light",
             "dark"
         ];
 
-        ctrl.userPrefData.$bindTo($scope,"$ctrl.userPreferences").then(function(){
+        userPreferences.$bindTo($scope,"ctrl.userPreferences").then(function(){
             if(!ctrl.userPreferences.theme){
                 ctrl.userPreferences.theme=ctrl.themes[0];
             }
         });
 
         ctrl.save = function () {
-            ctrl.userPreferences.$save();
+            debugger;
+            userPreferences.$save();
         };
         ctrl.cancel = function () {
             $location.path('/home');
         }
-    }
-});
+    }]);

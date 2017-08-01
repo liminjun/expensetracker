@@ -1,7 +1,12 @@
 angular.module('app').controller('LoginController', ['$location', 'auth', 'currentAuth', function ($location,auth,currentAuth) {
     var ctrl = this;
-    ctrl.loggedIn = !!ctrl.currentAuth;
+    debugger;
 
+    ctrl.loggedIn = !!currentAuth;
+    if(ctrl.loggedIn){
+        debugger;
+        $location.path('/home');
+    }
     // ctrl.anonLogin=function(){
     //     auth.$authAnonymously()
     //     .then(function(){
@@ -43,11 +48,13 @@ angular.module('app').controller('LoginController', ['$location', 'auth', 'curre
     };
 
     ctrl.githubLogin = function () {
-        auth.$signInWithPopup('github')
+        auth.$signInWithRedirect('github')
             .then(function () {
+                debugger;
                 $location.path('/home');
             })
             .catch(function (error) {
+                debugger;
                 ctrl.errorMessage = error.code;
             });
     }

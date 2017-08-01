@@ -1,13 +1,13 @@
 <nav></nav>
-<h1>Total:<small>{{$ctrl.expensesInOrder.getTotal() | currency}}</small></h1>
+<h1>Total:<small>{{ctrl.expensesInOrder.getTotal() | currency}}</small></h1>
 
 
 
 <hr>
 
-<expense-list-display select-expense='$ctrl.editExpense(expense)' expense-data="$ctrl.expensesInOrder"></expense-list-display>
+<expense-list-display select-expense='ctrl.editExpense(expense)' expense-data="ctrl.expensesInOrder"></expense-list-display>
 
 <edit-expense  
-edited-expense='$ctrl.editedExpense'
-update-expense="$ctrl.updateExpense()"
-create-new-expense="$ctrl.createExpense(expenseData)" categories="$ctrl.categories"></edit-expense>
+edited-expense='ctrl.editedExpense'
+update-expense="ctrl.updateExpense()"
+create-new-expense="ctrl.createExpense(expenseData)" categories="ctrl.categories"></edit-expense>

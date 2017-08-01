@@ -18,22 +18,29 @@
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
-    
 
-    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+
+
+     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+
+
     <script>
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyCB9jn9gwOaxY1rzlaD8_M32NcgK3I42Z0",
             authDomain: "expensetracker-815af.firebaseapp.com",
             databaseURL: "https://expensetracker-815af.firebaseio.com",
+            projectId: "expensetracker-815af",
             storageBucket: "expensetracker-815af.appspot.com",
             messagingSenderId: "407595966937"
         };
         firebase.initializeApp(config);
+
     </script>
+
+
     <script type="text/javascript" src="libs/angularfire-2.3.0/angularfire.min.js"></script>
 
     <script src="/app.js"></script>
@@ -48,7 +55,7 @@
     <script src="/logout/logout.js"></script>
     <script src="/firebaseRef.js"></script>
 
-    <script src="/userPreferences/editUserPref.js"></script>
+    <script src="/userpref/userpref.js"></script>
     <script src="/categories/categories.js"></script>
     <script src="/expenses/expenseListDisplay.js"></script>
     <script src="/expenses/expenseList.js"></script>
