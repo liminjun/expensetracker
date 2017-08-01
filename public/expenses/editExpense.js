@@ -1,14 +1,7 @@
-angular.module('app').component('editExpense', {
-    templateUrl: '/expenses/editExpense.html',
-    bindings: {
-        categories: "=",
-        createNewExpense: "&",
-        editedExpense: '=',
-        updateExpense: "&"
-    },
-    controller: function ($scope) {
-        var ctrl=this;
-
+(function (angular) {
+    function EditExpenseController($scope) {
+        var ctrl = this;
+        debugger;
         $scope.$watch('ctrl.editedExpense', (function (newData) {
             if (!!newData) {
                 ctrl.editing = true;
@@ -21,16 +14,18 @@ angular.module('app').component('editExpense', {
                     ctrl.categories[ctrl.categories.$indexFor(newData.category.id)]
                 ctrl.payee = newData.payee;
             }
-        }).bind(this));
+        })
+        );
 
         ctrl.setDefaults = function () {
             ctrl.amount = '';
             ctrl.desc = '';
             ctrl.payee = '';
             ctrl.date = new Date(Date.now()).toLocaleDateString();
-            if (ctrl.categories.length > 0) {
-                ctrl.selectedCategory = ctrl.categories[0];
-            }
+            debugger;
+
+            // ctrl.selectedCategory = ctrl.categories[0];
+
 
         };
 
@@ -74,5 +69,16 @@ angular.module('app').component('editExpense', {
         }
 
     }
+    angular.module('app').component('editExpense', {
+        templateUrl: '/expenses/editExpense.html',
+        controller: EditExpenseController,
+        bindings: {
+            categories: "<",
+            createNewExpense: "&",
+            editedExpense: '<',
+            updateExpense: "&"
+        }
 
-});
+    });
+
+})(window.angular);

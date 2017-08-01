@@ -40,3 +40,17 @@
 [info] Public Directory: public
 [info] 
 [info] Server listening at: http://localhost:5000
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\v-lee\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.0.7
+[debug] Platform:     win32
+[debug] Node Version: v6.10.3
+[debug] Time:         Tue Aug 01 2017 21:09:57 GMT+0800 (中国标准时间)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: E:\expensetracker
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000
