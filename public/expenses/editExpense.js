@@ -1,71 +1,75 @@
 (function (angular) {
     function EditExpenseController($scope) {
-        var ctrl = this;
-        debugger;
-        $scope.$watch('ctrl.editedExpense', (function (newData) {
+
+        this.$onInit = function () {
+            this.selectedCategory = this.categories[0];
+        };
+
+        //监听编辑
+        $scope.$watch('$ctrl.editedExpense', (function (newData) {
+            
             if (!!newData) {
-                ctrl.editing = true;
-                ctrl.amount = newData.amount;
-                ctrl.desc = newData.description;
+                this.editing = true;
+                this.amount = newData.amount;
+                this.desc = newData.description;
                 var date = new Date(newData.date);
-                ctrl.date = date.toLocaleDateString();
+                this.date = date.toLocaleDateString();
 
-                ctrl.selectedCategory =
-                    ctrl.categories[ctrl.categories.$indexFor(newData.category.id)]
-                ctrl.payee = newData.payee;
+                this.selectedCategory =
+                    this.categories[this.categories.$indexFor(newData.category.id)]
+                this.payee = newData.payee;
             }
-        })
-        );
+        }).bind(this));
 
-        ctrl.setDefaults = function () {
-            ctrl.amount = '';
-            ctrl.desc = '';
-            ctrl.payee = '';
-            ctrl.date = new Date(Date.now()).toLocaleDateString();
-            debugger;
 
-            // ctrl.selectedCategory = ctrl.categories[0];
+        this.setDefaults = function () {
+            this.amount = '';
+            this.desc = '';
+            this.payee = '';
+            this.date = new Date(Date.now()).toLocaleDateString();
+      
+            
 
 
         };
 
-        ctrl.setDefaults();
+        this.setDefaults();
 
-        ctrl.create = function () {
-            ctrl.expenseData = {
-                amount: parseFloat(ctrl.amount),
-                description: ctrl.desc,
-                payee: ctrl.payee,
+        this.create = function () {
+            this.expenseData = {
+                amount: parseFloat(this.amount),
+                description: this.desc,
+                payee: this.payee,
                 category: {
-                    name: ctrl.selectedCategory.name,
-                    id: ctrl.selectedCategory.$id
+                    name: this.selectedCategory.name,
+                    id: this.selectedCategory.$id
                 },
-                date: new Date(ctrl.date).toJSON()
+                date: new Date(this.date).toJSON()
             }
 
-            ctrl.setDefaults();
-            ctrl.createNewExpense({ expenseData: ctrl.expenseData });
+            this.setDefaults();
+            this.createNewExpense({ expenseData: this.expenseData });
         };
 
-        ctrl.save = function () {
-            ctrl.editedExpense.amount = parseFloat(ctrl.amount);
-            ctrl.editedExpense.description = ctrl.desc;
-            ctrl.editedExpense.payee = ctrl.payee;
-            ctrl.editedExpense.date = new Date(ctrl.date).toJSON();
-            ctrl.editedExpense.category = {
-                name: ctrl.selectedCategory.name,
-                id: ctrl.selectedCategory.$id
+        this.save = function () {
+            this.editedExpense.amount = parseFloat(this.amount);
+            this.editedExpense.description = this.desc;
+            this.editedExpense.payee = this.payee;
+            this.editedExpense.date = new Date(this.date).toJSON();
+            this.editedExpense.category = {
+                name: this.selectedCategory.name,
+                id: this.selectedCategory.$id
             }
             //save data
-            ctrl.updateExpense();
-            ctrl.setDefaults();
-            ctrl.editing = false;
-            ctrl.editedExpense = null;
+            this.updateExpense();
+            this.setDefaults();
+            this.editing = false;
+            this.editedExpense = null;
         };
-        ctrl.cancel = function () {
-            ctrl.setDefaults();
-            ctrl.editing = false;
-            ctrl.editedExpense = null;
+        this.cancel = function () {
+            this.setDefaults();
+            this.editing = false;
+            this.editedExpense = null;
         }
 
     }

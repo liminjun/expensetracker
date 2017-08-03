@@ -14,10 +14,11 @@
                 <td>{{expense.payee}}</td>
                 <td>{{expense.description}}</td>
                 <td>{{expense.category.name}}</td>
-                <td>{{expense.amount | currency}}</td>
+                <td>{{expense.amount | currency:"¥"}}</td>
                 <td>
-                    <span ng-show="hovering" class="glyphicon glyphicon-remove" ng-mouseenter="delhovering=true" ng-mouseleave="delhovering=false"
+                    <span ng-show="hovering" ng-mouseenter="delhovering=true" ng-mouseleave="delhovering=false"
                         ng-class="{'hover-delete':delhovering}" ng-click="$ctrl.deleteExpense(expense)">
+                        <i class="glyphicon glyphicon-remove"></i>Delete
                 </span>
                 </td>
             </tr>
